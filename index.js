@@ -8,7 +8,7 @@ tab.querySelector(".active").classList.remove("active");
 e.target.classList.add("active");
 
 const content=e.target.getAttribute("data-target");
-ans=about_section.querySelector(".tab-content.active").classList.remove("active");
+ about_section.querySelector(".tab-content.active").classList.remove("active");
 about_section.querySelector(content).classList.add("active");
 }
 });
