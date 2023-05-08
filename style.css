@@ -1,5 +1,5 @@
 /* font */
-  @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
   margin: 0;
@@ -9,8 +9,12 @@
 }
 body {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, var(--pink-light),var(--cyan-light));
-  font-family: 'PT Serif', serif;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--pink-light),
+    var(--cyan-light)
+  );
+  font-family: "PT Serif", serif;
   font-weight: 300;
   font-size: 16px;
   color: var(--blue-dark);
@@ -18,6 +22,7 @@ body {
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   padding: 5vh 15px;
+  background-attachment: fixed;
 }
 :root {
   --main-color: #e02f6b;
@@ -58,6 +63,17 @@ section {
   min-height: 90vh;
   border-radius: 30px;
   backdrop-filter: var(--backdrop-filter-blur);
+  padding: 80px 5px;
+}
+/*custom  scroller */
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
 }
 .main {
   max-width: 1200px;
@@ -67,9 +83,9 @@ section {
   /* background-color: rebeccapurple; */
   padding: 0 40px;
 }
-.home-section{
-    /* display: flex; */
-    padding: 120px 0;
+.home-section {
+  /* display: flex; */
+  padding: 120px 0;
 }
 .row {
   display: flex;
@@ -98,56 +114,208 @@ section {
   /* opacity: 0.8; */
 }
 .home-text p {
-    font-size: 18px;
+  font-size: 18px;
 }
 .home-text h1 {
-font-size: 32px;
-font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 .home-text h3 {
-    font-size: 19px;
-    margin: 0 0 30px;
+  font-size: 19px;
+  margin: 0 0 30px;
 }
-.home-text .btn{
-    margin: 0 15px 15px 0;
+.home-text .btn {
+  margin: 0 15px 15px 0;
 }
-.btn{
-    line-height:1.5;
-    background-color: var(--white-alpha-25);
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 30px;
-border: 1px solid var(--white-alpha-40);
-color: var(--main-color);
-font-weight: 500;
-text-transform: capitalize;
-cursor: pointer;
-font-size: 16px;
-/* font-family: inherit; */
-user-select: none;
-position: relative;
-overflow: hidden;
-vertical-align: middle;
-transition: width 0.3 ease;
+.btn {
+  line-height: 1.5;
+  background-color: var(--white-alpha-25);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--white-alpha-40);
+  color: var(--main-color);
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 16px;
+  /* font-family: inherit; */
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: width 0.3 ease;
 }
-.btn::before{
-    content:" ";
+.btn::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: width 0.3 ease;
+}
+.btn:hover::before {
+  width: 100%;
+}
+.btn:hover {
+  color: var(--white);
+}
+a {
+  text-decoration: none;
+}
+/* about section */
+.sec-padding {
+  padding: 80px 0;
+}
+
+.about-title {
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.about-title h2 {
+  font-size: 40px;
+}
+
+.about-img {
+  padding: 0 15px;
+  width: 40%;
+}
+.about-text {
+  width: 60%;
+  padding: 0 15px;
+}
+.about-text h3 {
+  margin: 20px;
+  font-size: 20px;
+}
+.about-img .img-box {
+  background-color: var(--white-alpha-25);
+  max-width: 380px;
+  border: 1px solid var(--white-alpha-40);
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.about-img .img-box img {
+  width: 100%;
+}
+.about-text .skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-text .skills-item {
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  padding: 10px 20px;
+  margin: 0 10px 15px 0;
+  border-radius: 30px;
+}
+.about-tabs {
+  margin-top: 20px;
+}
+.about-tabs .tab-item {
+  border: none;
+  padding: 2px 0;
+  display: inline-block;
+  background-color: transparent;
+  color: var(--blue-dark);
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0 30px 0 0;
+  position: relative;
+  opacity: 0.5;
+  transition: width 0.3 ease;
+}
+button {
+  font-family: sans-serif;
+  user-select: none;
+}
+.about-tabs .tab-item:last-child {
+  margin: 0;
+}
+.about-tabs .tab-item::before {
+  content: " ";
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  background-color: var(--blue-dark);
+  height: 1px;
+  transition: width 0.3 ease;
+}
+.about-tabs .tab-item:hover::before {
+  width: 100%;
+}
+/* active */
+.about-tabs .tab-item.active {
+  color: var(--main-color);
+  opacity: 1;
+  cursor: auto;
+}
+.about-tabs .tab-item.active::before {
+  width: 100%;
+  background-color: var(--main-color);
+}
+ 
+/* ed part */
+.about-text .tab-content {
+  padding: 40px 0;
+  display: none;
+}
+
+.about-text .tab-content.active{
+    display: block; 
+}
+.about-text .timeline{
+   position: relative; 
+}
+.about-text .timeline::before{
+    content: " ";
     position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
-    width: 0%;
+    width: 1px;
     background-color: var(--main-color);
-    z-index: -1;
-transition: width 0.3 ease;
-}
-.btn:hover::before{
-    width: 100%;
-}
-.btn:hover{
-    color: var(--white);
-}
-a{
-    text-decoration: none;
+    top: 0;
+    /* left: 5px; */
     
 }
+
+.about-text .timeline-item {
+    position: relative; 
+  margin-bottom: 30px;
+  padding: 10px 0 0  40px ;
+}
+.about-text .timeline-item::before{
+  content: " ";
+  position: absolute;
+  height: 11px;
+  width: 11px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  left: -5px;
+  top: 16px;
+}
+.about-text .timeline-item:last-child {
+  margin-bottom: 0;
+}
+.about-text .timeline-item .date {
+  color: var(--main-color);
+  display: block;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.about-text .timeline-item h4 {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+}
+.about-text .timeline-item h4 span {
+  font-weight: 400;
+}
+ 
